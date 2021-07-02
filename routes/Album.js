@@ -15,7 +15,6 @@ router.get('/:id', async (req, res) => {
     let resultJson = eval(results.body)
     let album = resultJson.map(item => {
         return {
-            id: item.id,
             title: item.title,
             thumbnailUrl: item.thumbnailUrl
         }
