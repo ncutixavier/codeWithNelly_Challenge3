@@ -21,6 +21,12 @@ app.get('/', (req, res) => {
     })
 })
 
+app.use('*', (req, res) => {
+    res.json({
+        message: "The endpoint is not longer belonged here!"
+    })
+})
+
 const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)

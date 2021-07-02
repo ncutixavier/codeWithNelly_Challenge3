@@ -12,9 +12,10 @@ router.get('/:id', async (req, res) => {
             message: 'Album was not found'
         })
     }
-    let resultJson = eval(results.body)
+    let resultJson = JSON.parse(results.body)
     let album = resultJson.map(item => {
         return {
+            id: item.id,
             title: item.title,
             thumbnailUrl: item.thumbnailUrl
         }
